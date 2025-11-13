@@ -1,0 +1,591 @@
+/* --- 1. CONFIG & RESET --- */
+:root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #f4f4f4;
+    --color-accent: #FFCC00; /* Bright Accent Color */
+    --color-text: #333;
+    --color-white: #ffffff;
+    --font-heading: 'Montserrat', sans-serif; /* Bold, Punchy */
+    --font-body: 'Roboto', sans-serif; /* Clean, Readable */
+    --spacing-large: 6rem;
+    --spacing-medium: 4rem;
+    --spacing-small: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scroll effect */
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-small);
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    font-weight: 900; /* Extra Bold */
+    margin-bottom: var(--spacing-small);
+    color: var(--color-primary);
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; border-bottom: 5px solid var(--color-accent); padding-bottom: 10px; display: inline-block;}
+h3 { font-size: 1.8rem; }
+
+.accent {
+    color: var(--color-accent);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: var(--spacing-large);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    border: 3px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 3px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.btn-cta { /* Used for the Contact Banner */
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 3px solid var(--color-white);
+    font-size: 1.2rem;
+}
+
+.btn-cta:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* General Section Styling */
+.section {
+    padding: var(--spacing-large) 0;
+}
+
+.section:nth-child(even) {
+    background-color: var(--color-secondary);
+}
+
+
+/* --- 2. NAVBAR --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly translucent */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-left: var(--spacing-small);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    padding-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-menu a {
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    font-weight: 500;
+}
+
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); /* Dark overlay */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: var(--color-white);
+    max-width: 900px;
+    padding: var(--spacing-small);
+}
+
+.hero h1 {
+    font-size: 5rem;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    color: #eee;
+}
+
+
+/* --- 4. SERVICE CARDS --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-small);
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-small);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--color-accent);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+
+/* --- 5. MEDIA SECTION (Video & Podcast) --- */
+.media-block {
+    margin-top: var(--spacing-large);
+    padding-top: var(--spacing-small);
+    border-top: 1px solid #ddd;
+}
+
+.media-block h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-small);
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-small);
+}
+
+.video-embed {
+    width: 100%;
+    /* 16:9 aspect ratio for videos */
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Podcast Grid */
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-small);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.podcast-embed {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- 6. TESTIMONIALS (Carousel) --- */
+.testimonials {
+    text-align: center;
+    background-color: var(--color-white);
+    overflow: hidden; /* Crucial for carousel */
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 900px;
+    margin: var(--spacing-medium) auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Duplicate slides in HTML for infinite effect */
+}
+
+.testimonial-slide {
+    flex-shrink: 0;
+    width: 100%; /* Each slide takes up full container width */
+    padding: 0 var(--spacing-large);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.client-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 600px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.quote strong {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.client-name {
+    font-weight: 700;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s, background 0.3s;
+}
+
+.carousel-button:hover {
+    opacity: 1;
+    background: var(--color-accent);
+    color: var(--color-primary);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+
+/* --- 7. ABOUT SECTION --- */
+.about {
+    text-align: center;
+    padding-top: var(--spacing-medium);
+}
+
+.about p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    padding: var(--spacing-small) 0;
+    border-left: 5px solid var(--color-accent);
+    padding-left: 2rem;
+    text-align: left;
+}
+
+
+/* --- 8. NEWSLETTER SIGNUP --- */
+.newsletter {
+    text-align: center;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5);
+}
+
+
+/* --- 9. BOLD CALL-TO-ACTION BANNER --- */
+.cta-banner {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-large) 0;
+}
+
+.cta-banner h2 {
+    color: var(--color-white);
+    font-size: 3rem;
+    border-bottom-color: var(--color-accent);
+}
+
+.cta-banner p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-medium);
+}
+
+
+/* --- 10. FOOTER --- */
+.footer {
+    background-color: #000;
+    color: #ccc;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-white);
+}
+
+
+/* --- 11. RESPONSIVENESS (Media Queries) --- */
+
+/* Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    :root {
+        --spacing-large: 4rem;
+        --spacing-medium: 3rem;
+        --spacing-small: 1.5rem;
+    }
+
+    h1 { font-size: 4rem; }
+    h2 { font-size: 2rem; }
+
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide desktop links */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu icon */
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .hero { height: 70vh; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .newsletter-form input[type="email"],
+    .newsletter-form .btn-primary {
+        width: 100%;
+    }
+
+    .cta-banner h2 { font-size: 2rem; }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .copyright {
+        margin-bottom: 1rem;
+    }
+    
+    .carousel-button {
+        padding: 5px;
+        font-size: 1rem;
+    }
+
+    .prev { left: 5px; }
+    .next { right: 5px; }
+
+    .quote { font-size: 1.2rem; }
+    
+    .about p {
+        font-size: 1.1rem;
+    }
+}
