@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Collins K. Masinde</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep-blue:#0d283c;
+      --gold:#f9b234;
+      --accent:#CFA36A;
+      --muted:#F4F6F8;
+    }
+    body { font-family: 'Poppins', sans-serif; line-height:1.6; scroll-behavior:smooth; color:#0b2340; }
+    .container-narrow { max-width:1100px; margin:0 auto; }
+
+    /* Section headings */
+    h1.page-title { font-size:2.2rem; color:var(--deep-blue); font-weight:700; text-align:left; margin-bottom:0.25rem; }
+    h2.section-title { font-size:2rem; color:var(--deep-blue); text-align:left; margin-bottom:0.75rem; }
+    h2.section-title::after { content:""; width:64px; height:4px; background:var(--gold); display:block; margin:10px 0 0 0; border-radius:2px; }
+
+    /* Hero */
+    .hero-about {
+      position:relative;
+      min-height:42vh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background-size:cover;
+      background-position:center;
+    }
+    .hero-about::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(13,40,60,0.84), rgba(13,40,60,0.64)); }
+    .hero-inner{ position:relative; z-index:2; }
+
+    /* Cards / callouts */
+    .callout { background:#fff; border-radius:12px; padding:24px; box-shadow:0 10px 30px rgba(11,35,64,0.06); }
+    .pill { display:inline-block; padding:6px 12px; border-radius:999px; font-weight:600; background:var(--muted); color:var(--deep-blue); margin-right:8px; }
+
+    /* Reveal / hover effects (same system as main site) */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .72s ease, transform .72s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    .reveal-stagger { opacity:0; transform:translateY(18px); transition:opacity .62s ease, transform .62s ease; transition-delay: var(--delay, 0ms); }
+    .reveal-stagger.revealed { opacity:1; transform:translateY(0); }
+
+    .hover-lift { transition: transform .25s ease, box-shadow .25s ease; }
+    .hover-lift:hover { transform: translateY(-8px); box-shadow:0 18px 40px rgba(11,35,64,0.12); }
+
+    .icon-rotate { display:inline-block; transition: transform .35s cubic-bezier(.22,.9,.3,1); }
+    .icon-rotate:hover { transform: rotate(12deg) translateY(-2px); }
+
+    /* Mission box */
+    .mission { background: linear-gradient(90deg, rgba(249,178,52,0.08), rgba(12,36,60,0.02)); border-left:4px solid var(--gold); padding:20px; border-radius:8px; }
+
+    /* Bio block */
+    .bio { background:#fff; border-radius:10px; padding:24px; box-shadow:0 8px 28px rgba(11,35,64,0.05); }
+
+    footer { background:#000; color:#fff; }
+
+    /* Social overlay on image */
+    .social-image { position:relative; display:inline-block; }
+    .social-image img{ display:block; border-radius:10px; width:100%; height:auto; }
+    .social-icons { position:absolute; left:12px; bottom:12px; display:flex; gap:8px; }
+    .social-icons a{ background:rgba(255,255,255,0.92); padding:6px; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(11,35,64,0.08); }
+
+    @media (max-width:767.98px){
+      h1.page-title { font-size:1.6rem; }
+      h2.section-title { font-size:1.4rem; }
+      .hero-about { min-height:36vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (same look as site header) -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:var(--deep-blue);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">COLLINS K. MASINDE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse2">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="aboutus.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#speaking">Speaking</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#resources">Resources</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-warning fw-bold" href="/#connect" style="background:var(--gold); color:var(--deep-blue);">Book Collins to Speak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-about reveal" style="background-image:url('https://i.imgur.com/8Qp2D6y.jpg');">
+    <div class="container hero-inner">
+      <div class="row align-items-center">
+        <div class="col-lg-7 text-white">
+          <p class="pill reveal" style="color:var(--gold); background:rgba(249,178,52,0.08);">About</p>
+          <h1 class="page-title reveal" style="margin-top:12px;">A Voice Shaped by Identity, Discipline &amp; the Pursuit of Excellence</h1>
+          <p class="lead mt-3 reveal" style="max-width:720px;">
+            Collins K. Masinde is a mindset transformation speaker whose message helps people unlock their potential by renewing their mind and living with excellence. His calling is simple yet profound: awaken what God placed inside people.
+          </p>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block text-end">
+          <img src="https://i.imgur.com/placeholder.png" alt="Collins K. Masinde portrait" class="img-fluid rounded shadow-lg hover-lift reveal" style="max-height:260px; object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container container-narrow">
+
+      <!-- SECTION 1: WHO COLLINS IS -->
+      <section id="who" class="mb-5">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-8">
+            <h2 class="section-title reveal">Who Collins Is</h2>
+            <p class="reveal-stagger" style="--delay:80ms;">
+              Collins K. Masinde is a mindset transformation speaker whose message helps people unlock their potential by renewing their mind and living with excellence. His calling is simple yet profound: <strong>Awaken what God placed inside people.</strong>
+            </p>
+
+            <p class="mt-3 reveal-stagger" style="--delay:160ms;">
+              He bridges personal development and Christian truth in a way that reaches:
+            </p>
+
+            <ul class="list-unstyled mt-3">
+              <li class="reveal-stagger mb-2" style="--delay:220ms;"><i class="fa-solid fa-circle-small me-2" style="color:var(--accent)"></i>The religious</li>
+              <li class="reveal-stagger mb-2" style="--delay:280ms;"><i class="fa-solid fa-circle-small me-2" style="color:var(--accent)"></i>The non-religious</li>
+              <li class="reveal-stagger mb-2" style="--delay:340ms;"><i class="fa-solid fa-circle-small me-2" style="color:var(--accent)"></i>The uncertain</li>
+              <li class="reveal-stagger mb-2" style="--delay:400ms;"><i class="fa-solid fa-circle-small me-2" style="color:var(--accent)"></i>The young searching for direction</li>
+              <li class="reveal-stagger mb-2" style="--delay:460ms;"><i class="fa-solid fa-circle-small me-2" style="color:var(--accent)"></i>Professionals seeking identity and purpose</li>
+            </ul>
+
+            <p class="mt-3 reveal-stagger" style="--delay:520ms;">
+              His message is not <em>churchy</em>. Not motivational. It is <strong>transformational</strong>.
+            </p>
+          </div>
+
+          <!-- REPLACED: image + social icons instead of "Quick things to know" -->
+          <div class="col-lg-4">
+            <div class="callout reveal-stagger" style="--delay:160ms; display:flex; gap:12px; align-items:flex-start;">
+              <div style="flex:0 0 120px;">
+                <div class="social-image">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" alt="Collins portrait small">
+                  <div class="social-icons">
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div style="flex:1">
+                <h6 class="mb-2 fw-bold">Connect with Collins</h6>
+                <p class="small mb-2">Follow for clips, event updates and resources. Click any icon to open the platform.</p>
+                <p class="small mb-0"><i class="fa-solid fa-check me-2" style="color:var(--accent)"></i>Audience-first communication</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-5">
+
+      <!-- SECTION 2: TRANSFORMATION STORY -->
+      <section id="story" class="mb-5">
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <h2 class="section-title reveal">His Transformation Story</h2>
+            <p class="reveal-stagger" style="--delay:80ms;">
+              Collins did not grow up believing he would one day speak to crowds. His journey began in a quiet room in 2017 with a borrowed set of Global Leadership Summit tapes. As Cory Booker declared, “Now that you are here… what will you do?” — something awakened in him.
+            </p>
+
+            <p class="reveal-stagger" style="--delay:160ms;">
+              That night became the turning point:
+            </p>
+
+            <ul class="mt-3">
+              <li class="reveal-stagger mb-2" style="--delay:220ms;"><i class="fa-solid fa-arrow-right me-2" style="color:var(--accent)"></i>From insecurity to clarity</li>
+              <li class="reveal-stagger mb-2" style="--delay:280ms;"><i class="fa-solid fa-arrow-right me-2" style="color:var(--accent)"></i>From confusion to identity</li>
+              <li class="reveal-stagger mb-2" style="--delay:340ms;"><i class="fa-solid fa-arrow-right me-2" style="color:var(--accent)"></i>From wasted potential to purpose</li>
+              <li class="reveal-stagger mb-2" style="--delay:400ms;"><i class="fa-solid fa-arrow-right me-2" style="color:var(--accent)"></i>From passive living to intentional growth</li>
+            </ul>
+
+            <p class="mt-3 reveal-stagger" style="--delay:480ms;">
+              Scriptures like <em>Romans 12:2</em> and <em>Ecclesiastes 9:10</em> shaped his philosophy: <strong>“Excellence is worship. A transformed mind produces a transformed life.”</strong>
+            </p>
+
+            <p class="reveal-stagger" style="--delay:560ms;">
+              Raised in a home with emotional gaps despite financial stability, Collins grew up valuing dignity, justice, compassion, and purpose. He promised himself: <em>“If I rise, I will lift others with me.”</em> Today, that promise has become his life’s work.
+            </p>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="callout reveal-stagger" style="--delay:200ms;">
+              <h6 class="mb-2 fw-bold">Turning point — 2017</h6>
+              <p class="small mb-0">A borrowed GLS tape &amp; one question changed a life. The rest was discipline, study, prayer, and action.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-5">
+
+      <!-- SECTION 3: WHY HE SPEAKS -->
+      <section id="why" class="mb-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <h2 class="section-title reveal">Why He Speaks</h2>
+            <p class="reveal-stagger" style="--delay:80ms;">
+              Because too many young people don’t know how powerful they are. Because potential is dying silently in homes, schools, and communities. Because excellence has been reduced to luck. Because faith has been separated from daily life.
+            </p>
+
+            <p class="mt-3 reveal-stagger" style="--delay:160ms;">
+              Collins speaks to restore:
+            </p>
+
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6 reveal-stagger" style="--delay:220ms;">
+                <div class="bio p-3">
+                  <h6 class="mb-2 fw-bold"><i class="fa-solid fa-id-badge me-2" style="color:var(--accent)"></i>Identity</h6>
+                  <p class="small text-muted mb-0">Clarity about who you are and what you were created to do.</p>
+                </div>
+              </div>
+
+              <div class="col-sm-6 reveal-stagger" style="--delay:300ms;">
+                <div class="bio p-3">
+                  <h6 class="mb-2 fw-bold"><i class="fa-solid fa-bolt me-2" style="color:var(--accent)"></i>Discipline</h6>
+                  <p class="small text-muted mb-0">Practical routines and habits that form character and results.</p>
+                </div>
+              </div>
+
+              <div class="col-sm-6 reveal-stagger" style="--delay:380ms;">
+                <div class="bio p-3">
+                  <h6 class="mb-2 fw-bold"><i class="fa-solid fa-bullseye me-2" style="color:var(--accent)"></i>Purpose</h6>
+                  <p class="small text-muted mb-0">Meaningful direction that moves people from survival to calling.</p>
+                </div>
+              </div>
+
+              <div class="col-sm-6 reveal-stagger" style="--delay:460ms;">
+                <div class="bio p-3">
+                  <h6 class="mb-2 fw-bold"><i class="fa-solid fa-hand-holding-heart me-2" style="color:var(--accent)"></i>Dignity & Hope</h6>
+                  <p class="small text-muted mb-0">Restoring worth, hope, and the courage to lead a better life.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="mission reveal-stagger" style="--delay:160ms;">
+              <h6 class="mb-2 fw-bold">Restoration through teaching</h6>
+              <p class="small mb-0">Collins is the voice calling a generation to rise — helping people see that faith and everyday excellence are inseparable.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-5">
+
+      <!-- SECTION 4: MISSION STATEMENT -->
+      <section id="mission" class="mb-5">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-title reveal">Mission Statement</h2>
+            <div class="callout reveal-stagger" style="--delay:120ms;">
+              <p class="mb-0 fw-semibold">To unlock potential, renew minds, and build a generation marked by discipline, excellence, purpose, and dignity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-5">
+
+      <!-- SECTION 5: OFFICIAL BIO (FOR EVENT ORGANIZERS) -->
+      <section id="bio" class="mb-5">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-title reveal">Official Bio — For Event Organizers</h2>
+
+            <!-- Full bio area - replace the placeholder text below with the refined full bio you want published -->
+            <article class="bio mt-3 reveal-stagger" style="--delay:120ms;">
+              <p class="mb-3">
+                <!-- Placeholder: paste the final long-form bio here. -->
+                Collins K. Masinde is a mindset transformation speaker who helps youth, faith communities, schools, and corporate teams renew their thinking and live with disciplined excellence. Drawing from Scripture, leadership training, and practical habit formation, Collins combines deep spiritual truth with actionable tools that audiences can apply immediately. His talks are designed to be accessible to believers and non-believers alike — not churchy, not simply motivational, but transformational.
+              </p>
+
+              <p class="mb-3">
+                Collins’ ministry emerged after a pivotal moment in 2017. A borrowed set of Global Leadership Summit tapes and one question — “Now that you are here… what will you do?” — set him on a path of intentional growth. From that point he moved from uncertainty to clarity, shaped his values around dignity and service, and committed to lifting others as he rises.
+              </p>
+
+              <p class="mb-3">
+                He has since spoken at schools, churches, leadership conferences, and corporate events, focusing on identity, discipline, purpose, and the integration of faith into daily life. Collins is available for keynotes, workshops, leadership training, and virtual sessions. Event organizers appreciate his balance of depth and practicality, and his careful follow-up with audiences and host organizations.
+              </p>
+
+              <p class="mb-0"><strong>Availability & booking:</strong> For event availability, sample talks, and fees, please use the <a href="/#connect" class="underline-grow">Connect</a> page or email <a href="mailto:collins@example.com">collins@example.com</a>.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDIA SECTION (added) -->
+      <section id="media" class="mb-5">
+        <h2 class="section-title reveal">Media & Clips</h2>
+        <div class="row g-3 mt-3">
+          <div class="col-sm-6 col-md-3 reveal-stagger"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="Talk" class="img-fluid rounded"></div>
+          <div class="col-sm-6 col-md-3 reveal-stagger"><img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=800&auto=format&fit=crop" alt="Workshop" class="img-fluid rounded"></div>
+          <div class="col-sm-6 col-md-3 reveal-stagger"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800&auto=format&fit=crop" alt="Audience" class="img-fluid rounded"></div>
+          <div class="col-sm-6 col-md-3 reveal-stagger"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Studio" class="img-fluid rounded"></div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-lg-8">
+            <p class="small text-muted">Watch short clips and talks on YouTube or request a speaker reel.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-warning" href="https://www.youtube.com/" target="_blank" rel="noopener">Watch on YouTube</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA: Invite / Contact -->
+      <section class="text-center py-4">
+        <a href="/#connect" class="btn btn-accent hover-lift btn-lg reveal" style="--delay:120ms;">Invite Collins to Speak →</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">About</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/about" class="text-decoration-none">About Collins</a></li>
+            <li><a href="/#mission" class="text-decoration-none">Mission</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/#speaking" class="text-decoration-none">Keynote Speaking</a></li>
+            <li><a href="/#connect" class="text-decoration-none">Booking</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="/#resources" class="text-decoration-none">Videos</a></li>
+            <li><a href="/#resources" class="text-decoration-none">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Connect</h6>
+          <ul class="list-unstyled small">
+            <li><a href="mailto:collins@example.com" class="text-decoration-none">Email</a></li>
+            <li><a href="#social" class="text-decoration-none">Social</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center small text-secondary mb-0">&copy; 2025 Collins K. Masinde. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Scroll & hover effects script (same lightweight system used on main site) -->
+  <script>
+  (function(){
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Reveal observer
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal-stagger').forEach(el => {
+      // if not inside a row that will apply delays, observe directly
+      if(!el.closest('.row-stagger')) revealObserver.observe(el);
+    });
+
+    // Staggered lists (applies --delay if present)
+    document.querySelectorAll('.row-stagger').forEach(row=>{
+      const items = row.querySelectorAll('.reveal-stagger');
+      items.forEach((it,i)=> it.style.setProperty('--delay', `${i*90}ms`));
+      const rowObs = new IntersectionObserver((entries, ro)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            items.forEach(it=> it.classList.add('revealed'));
+            ro.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      rowObs.observe(row);
+    });
+
+    // Tilt (desktop only)
+    if(canHover){
+      document.querySelectorAll('[data-tilt]').forEach(wrap=>{
+        const el = wrap.querySelector('.tilt') || wrap;
+        if(!el) return;
+        let bounds = wrap.getBoundingClientRect();
+        const updateBounds = () => bounds = wrap.getBoundingClientRect();
+        window.addEventListener('resize', updateBounds);
+        wrap.addEventListener('mousemove', e=>{
+          const x = (e.clientX - bounds.left) / bounds.width - 0.5;
+          const y = (e.clientY - bounds.top) / bounds.height - 0.5;
+          const rx = (y * 6).toFixed(2), ry = (x * -6).toFixed(2);
+          el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(4px)`;
+        });
+        wrap.addEventListener('mouseleave', ()=> el.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)');
+      });
+    } else {
+      // remove transforms on touch devices
+      document.querySelectorAll('.tilt').forEach(el=> el.style.transform = '');
+    }
+
+    // Parallax hero (subtle) on large non-touch screens
+    const hero = document.querySelector('.hero-about');
+    if(hero && canHover && window.innerWidth > 768){
+      window.addEventListener('scroll', ()=>{
+        const rect = hero.getBoundingClientRect();
+        const scrolled = Math.max(0, -rect.top);
+        hero.style.backgroundPosition = `center ${30 + scrolled * 0.06}%`;
+      }, { passive: true });
+    }
+
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speaking — Collins K. Masinde</title>
+  <meta name="description" content="Book Collins K. Masinde for keynotes, workshops and leadership training — identity, discipline, excellence." />
+
+  <!-- Bootstrap + Fonts + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- AOS for scroll animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --deep-blue:#0d283c;
+      --gold:#f9b234;
+      --accent:#CFA36A;
+      --muted:#F4F6F8;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;color:var(--deep-blue);background:#ffffff}
+    a{text-decoration:none}
+
+    /* Navbar */
+    .site-nav{background:var(--deep-blue)}
+    .site-nav .nav-link{color:var(--muted)}
+    .site-nav .navbar-brand{color:var(--muted); font-weight:700}
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(180deg, rgba(13,40,60,0.94), rgba(13,40,60,0.82)), url('https://i.imgur.com/8Qp2D6y.jpg') center/cover no-repeat; 
+      color:#fff; padding:6rem 0 4rem;
+    }
+    .hero .eyebrow{
+      background:rgba(249,178,52,0.12); color:var(--gold); display:inline-block; padding:.4rem .8rem; border-radius:999px; font-weight:700;
+    }
+    .hero h1{font-size:2.1rem; margin-top:.6rem}
+    .hero p.lead{max-width:66ch}
+    .hero .btn:hover{filter: brightness(1.05); transform: translateY(-2px); transition: all 0.3s ease;}
+
+    /* Section titles */
+    h2.section-title{color:var(--deep-blue); font-weight:700}
+    h2.section-title::after{content:'';display:block;width:60px;height:4px;background:var(--gold);margin-top:8px;border-radius:3px}
+
+    /* Cards */
+    .card, .feature-list li, .topics .topic, .formats .format{
+      transition: all 0.3s ease;
+    }
+    .card:hover {transform: translateY(-6px); box-shadow: 0 18px 40px rgba(11,35,64,0.15);}
+    .btn:hover {transform: translateY(-2px);}
+
+    /* Card quiet */
+    .card-quiet{background:var(--card); border-radius:12px;padding:1.25rem; box-shadow:0 10px 30px rgba(11,35,64,0.04)}
+    .feature-list li{margin-bottom:.6rem}
+
+    /* Topics list */
+    .topics .topic{padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(249,178,52,0.04), rgba(12,36,60,0.02));border-left:4px solid var(--gold)}
+
+    /* Formats grid */
+    .formats .format{border-radius:8px;border:1px dashed rgba(13,40,60,0.06); padding:1rem; text-align:center}
+
+    /* CTA */
+    .cta-strip{background:linear-gradient(90deg,var(--gold), #f0b84e); color:var(--deep-blue); padding:2rem; border-radius:12px; text-align:center}
+
+    /* Footer */
+    footer { background:#000; color:#fff; }
+
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width:767.98px){ .hero{padding:3.5rem 0} .hero h1{font-size:1.6rem} }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">COLLINS K. MASINDE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/speaking">Speaking</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#resources">Resources</a></li>
+          <li class="nav-item ms-lg-3"><a class="btn btn-warning fw-bold" href="/#connect" style="background:var(--gold); color:var(--deep-blue);">Book Collins to Speak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" data-aos="fade-up">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <span class="eyebrow">Speaking</span>
+          <h1 class="mt-3">Your Event Needs a Voice That Awakens Potential</h1>
+          <p class="lead mt-3">People don’t need more motivation. They need mindset shifts, identity clarity, and practical discipline that transforms their life. Collins brings a speaking style that is calm yet powerful, deep yet practical, faith-rooted yet universally relevant.</p>
+          <div class="mt-3">
+            <a href="mailto:collins@example.com" class="btn btn-warning fw-bold" style="background:var(--gold); color:var(--deep-blue)">Book Collins</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="btn btn-outline-light ms-2"><i class="fa-solid fa-play me-2"></i>Watch clips</a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-lg-end d-none d-lg-block">
+          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1000&auto=format&fit=crop" alt="Speaking" class="img-fluid rounded shadow-lg" style="max-height:300px; object-fit:cover" data-aos="zoom-in">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-5">
+
+    <!-- WHAT AUDIENCES EXPERIENCE -->
+    <section id="what-audiences-experience" style="padding:60px 0; background:#f9fafb;" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">What Audiences Experience</h2>
+        <div class="row g-5 align-items-start">
+          <div class="col-md-6 d-flex justify-content-center position-relative">
+            <div style="width:100%; max-width:560px; position:relative;">
+              <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1400&auto=format&fit=crop" alt="Audience listening to a talk" class="rounded" style="width:100%; height:440px; object-fit:cover; box-shadow:0 25px 55px rgba(11,35,64,0.15); border:1px solid rgba(255,255,255,0.03);" data-aos="fade-right">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Speaker on stage" style="position:absolute; right:20px; bottom:40px; width:58%; height:250px; object-fit:cover; border-radius:14px; box-shadow:0 30px 65px rgba(11,35,64,0.22); border:6px solid #fff; transform:translateY(-8px);" data-aos="fade-left">
+            </div>
+            <div style="width:100%; max-width:560px; margin-top:16px; color:#6b7a89; font-size:0.95rem; text-align:left;">
+              Collins in action — live talks and workshops that move audiences to action.
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex flex-column gap-4">
+            <ul style="list-style:none; padding:0; margin:0;" data-aos="fade-up" data-aos-delay="100">
+              <li>A renewed mind</li>
+              <li>A clear sense of identity and purpose</li>
+              <li>Practical tools for discipline and consistency</li>
+              <li>A deeper hunger for excellence in daily life</li>
+              <li>Courage to rise above limitations</li>
+              <li>A shift from passive living to intentional action</li>
+            </ul>
+            <div class="card p-3" data-aos="fade-up" data-aos-delay="200">
+              <h5>Presence & Tone</h5>
+              <p>Collins balances calm authority with approachable language — challenging audiences while offering clear next steps that leaders and individuals can apply immediately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE TOPICS -->
+    <section id="signature-topics" style="padding:60px 0; background:#f9f9f9;">
+      <div style="max-width:1200px; margin:0 auto; text-align:center;">
+        <h2 data-aos="fade-up">Signature Topics Delivered Online</h2>
+        <p data-aos="fade-up" data-aos-delay="100">High-impact, transformational sessions crafted for individuals, schools, and organizations.</p>
+        <div class="row g-4">
+          <!-- Each topic card -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card p-4 h-100 text-center">
+              <i class="fas fa-brain fa-2x text-warning mb-3"></i>
+              <h5>Mindset Reengineering</h5>
+              <p>Shift thinking patterns that limit growth and unlock new identity levels.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card p-4 h-100 text-center">
+              <i class="fas fa-fire fa-2x text-warning mb-3"></i>
+              <h5>Discipline & Self-Mastery</h5>
+              <p>Build habits, structure, and daily systems that create unstoppable momentum.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card p-4 h-100 text-center">
+              <i class="fas fa-cross fa-2x text-warning mb-3"></i>
+              <h5>Faith, Purpose & Identity</h5>
+              <p>Understand calling, spiritual alignment, and living out God-given purpose.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="card p-4 h-100 text-center">
+              <i class="fas fa-bolt fa-2x text-warning mb-3"></i>
+              <h5>High-Performance Leadership</h5>
+              <p>Lead with clarity, conviction, emotional intelligence, and bold execution.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="card p-4 h-100 text-center">
+              <i class="fas fa-users fa-2x text-warning mb-3"></i>
+              <h5>Character & Value Formation</h5>
+              <p>Transform belief systems, discipline, integrity, and long-term thinking.</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="card p-4 h-100 text-center">
+              <i class="fas fa-road fa-2x text-warning mb-3"></i>
+              <h5>Destiny Navigation</h5>
+              <p>Move from confusion to clarity—your next step, next level, next season.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY EVENTS BOOK COLLINS -->
+    <section id="why-events-book-collins" style="padding:60px 0; background:#f9fafb;" data-aos="fade-up">
+      <div class="container">
+        <h2 class="section-title text-center">Why Events Book Collins</h2>
+        <div class="row g-5 align-items-start">
+          <div class="col-md-6" data-aos="fade-right">
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li><span style="color:#f9b234; font-weight:700;">•</span> He connects with youth AND adults</li>
+              <li><span style="color:#f9b234; font-weight:700;">•</span> He speaks into identity, not just behavior</li>
+              <li><span style="color:#f9b234; font-weight:700;">•</span> He teaches excellence as a lifestyle</li>
+              <li><span style="color:#f9b234; font-weight:700;">•</span> He brings deep truths in simple language</li>
+              <li><span style="color:#f9b234; font-weight:700;">•</span> He blends faith + personal development uniquely</li>
+              <li><span style="color:#f9b234; font-weight:700;">•</span> He offers follow-up mentoring options</li>
+            </ul>
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <div class="card p-4">
+              <h5>Audience outcomes</h5>
+              <p>Tangible actions, leader-friendly resources, and a measurable shift in habits and perspective within weeks of the event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section id="resources" class="py-5" style="background:var(--deep-blue); color:white;" data-aos="fade-up">
+      <div class="container text-center">
+        <h2 class="section-title text-white">Ready to Stop Talking and Start Winning?</h2>
+        <p class="lead text-white-50 mb-4">Your next level is just a conversation away. Skip the complex form and go direct.</p>
+        <a href="mailto:collins@example.com?subject=Speaking%20Inquiry%20from%20Website" class="btn btn-light btn-lg fw-bold">Email Collins Directly</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">About</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#about" class="text-white underline-grow">Our Story</a></li>
+            <li><a href="#mission" class="text-white underline-grow">Mission</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#speaking" class="text-white underline-grow">Keynote Speaking</a></li>
+            <li><a href="#connect" class="text-white underline-grow">Coaching</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#resources" class="text-white underline-grow">Videos</a></li>
+            <li><a href="#resources" class="text-white underline-grow">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Connect</h6>
+          <ul class="list-unstyled small">
+            <li><a href="mailto:collins@example.com" class="text-white underline-grow">Email</a></li>
+            <li><a href="#social" class="text-white underline-grow">Social</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center small text-secondary mb-0">&copy; 2025 Collins K. Masinde. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+</body>
+</html>

@@ -1,203 +1,506 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collins Web | Unleash Your Momentum</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collins K. Masinde — Mindset Transformation Speaker</title>
+
+  <!-- Bootstrap CSS (JSDelivr) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep-blue:#0d283c;
+      --gold:#f9b234;
+      --accent:#CFA36A;
+      --muted:#F4F6F8;
+    }
+
+    body { font-family: 'Poppins', sans-serif; line-height:1.6; scroll-behavior:smooth; }
+    h2.section-title { font-size:2.4rem; color:var(--deep-blue); text-align:center; margin-bottom:0.5rem; font-weight:700; }
+    h2.section-title::after { content:""; width:80px; height:4px; background:var(--gold); display:block; margin:12px auto 0; border-radius:2px; }
+
+    /* Hero */
+    .hero {
+      position:relative;
+      min-height:72vh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background-size:cover;
+      background-position:center 30%;
+      will-change: background-position;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:rgba(13,40,60,0.75);
+    }
+    .hero .hero-inner{ position:relative; z-index:2; }
+
+    /* Accent buttons */
+    .btn-accent { background:var(--gold); color:var(--deep-blue); font-weight:700; border:0; }
+    .btn-accent-outline { border:2px solid var(--gold); color:var(--gold); background:transparent; font-weight:700; }
+
+    /* Topic cards (uses bootstrap .card but customize look) */
+    .topic-card { border-radius:14px; box-shadow:0 8px 30px rgba(11,35,64,0.06); transition:transform .25s, box-shadow .25s; transform-origin:center; }
+    .topic-card.hover-lift:hover{ transform:translateY(-8px); box-shadow:0 18px 40px rgba(11,35,64,0.12); }
+    .topic-card .card-body i { font-size:2rem; color:var(--gold); margin-bottom:12px; transition: transform .35s cubic-bezier(.22,.9,.3,1); }
+
+    /* Icon micro motion */
+    .icon-rotate { display:inline-block; transition: transform .35s cubic-bezier(.22,.9,.3,1); }
+    .icon-rotate:hover { transform: rotate(12deg) translateY(-2px); }
+
+    /* Tilt */
+    .tilt-wrap { perspective: 900px; }
+    .tilt { transition: transform .12s ease; transform-style: preserve-3d; will-change: transform; }
+
+    /* Reveal (scroll) */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .72s ease, transform .72s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    /* Stagger variant */
+    .reveal-stagger { opacity:0; transform:translateY(20px); transition:opacity .62s ease, transform .62s ease; transition-delay: var(--delay, 0ms); }
+    .reveal-stagger.revealed { opacity:1; transform:translateY(0); }
+
+    /* Underline grow for links */
+    .underline-grow { position:relative; color: inherit; text-decoration:none; }
+    .underline-grow::after { content:""; position:absolute; left:0; right:0; bottom:-3px; height:3px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform .28s ease; }
+    .underline-grow:hover::after { transform:scaleX(1); }
+
+    /* Nav active */
+    .navbar .nav-link.active { font-weight:700; color:var(--gold) !important; }
+
+    /* Quote hero */
+    .quote-hero { background-size:cover; background-position:center; position:relative; color:white; }
+    .quote-hero::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,0.45); }
+
+    /* Footer */
+    footer { background:#000; color:#fff; }
+
+    /* Small responsive tweaks */
+    @media (max-width:767.98px){
+      h2.section-title{ font-size:1.8rem; }
+      .hero{ min-height:60vh; background-position:center 20%; }
+    }
+  </style>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container navbar-content">
-            <a href="#hero" class="logo"></a>
-            <nav class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#media">Media</a>
-                <a href="#about">About</a>
-                <a href="#newsletter">Subscribe</a>
-                <button class="menu-toggle" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-        <div class="mobile-menu">
-            <a href="#services">Services</a>
-            <a href="#media">Media</a>
-            <a href="#about">About</a>
-            <a href="#newsletter">Subscribe</a>
-        </div>
-    </header>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:var(--deep-blue);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">COLLINS K. MASINDE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <section id="hero" class="hero">
-        <div class="video-overlay"></div>
-        <video autoplay muted loop class="hero-video">
-            <source src="your-inspirational-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-content">
-            <h1>STOP WAITING. <span class="accent">START LEADING.</span></h1>
-            <p>The story of your success starts with one bold step. Let's make it count.</p>
-            <a href="#services" class="btn btn-primary">UNLEASH YOUR MOMENTUM</a>
-        </div>
-    </section>
-
-    <section id="services" class="section services">
-        <div class="container">
-            <h2>The Only Four Things You Need to Change Your Game.</h2>
-            <p class="subtitle">Direct, actionable paths to personal and professional breakthrough.</p>
-            <div class="card-grid">
-                <div class="service-card">
-                    <i class="fas fa-microphone-alt"></i>
-                    <h3>Keynote Speaking</h3>
-                    <p>High-energy, direct talks that cut through the noise and spark immediate action.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Coaching</h3>
-                    <p>One-on-one sessions focused on the '5 Second Rule' of execution and clarity.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Online Courses</h3>
-                    <p>Self-paced, proven frameworks to master mindset, motivation, and leadership.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Community Building</h3>
-                    <p>Join a tribe of high-performers committed to holding you accountable for your greatness.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="media" class="section media-section">
-        <div class="container">
-            <h2>WATCH. LISTEN. <span class="accent">ACT.</span></h2>
-
-            <div class="media-block">
-                <h3>Latest Insights (Video)</h3>
-                <div class="video-grid">
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="media-block podcast-block">
-                <h3>The Collins Web Podcast (Audio)</h3>
-                <div class="podcast-grid">
-                    <iframe class="podcast-embed" src="https://open.spotify.com/embed/episode/SPOTIFY_EPISODE_ID" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    <iframe class="podcast-embed" src="https://podcasts.apple.com/embed/episode/APPLE_EPISODE_ID" width="100%" height="232" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="section testimonials">
-        <div class="container">
-            <h2>THEY TOOK THE LEAP.</h2>
-            <p class="subtitle">Real people. Real results. The story is yours to write.</p>
-
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="testimonial-slide">
-                        <div class="client-image" style="background-image: url('client-1.jpg');"></div>
-                        <p class="quote">"Collins doesn't just motivate; he gives you the framework to **never rely on motivation again**. My productivity is up 300%."</p>
-                        <p class="client-name">- Sarah K., Tech Founder</p>
-                    </div>
-
-                    <div class="testimonial-slide">
-                        <div class="client-image" style="background-image: url('client-2.jpg');"></div>
-                        <p class="quote">"The storytelling flow made the message stick. I didn't just hear it; I **internalized the necessity of action**."</p>
-                        <p class="client-name">- Alex D., Marketing Director</p>
-                    </div>
-
-                    <div class="testimonial-slide">
-                        <div class="client-image" style="background-image: url('client-3.jpg');"></div>
-                        <p class="quote">"If you're stuck, stop reading this and hire Collins. It's the most straightforward path to **breaking the inertia** you'll find."</p>
-                        <p class="client-name">- Jamie L., Small Business Owner</p>
-                    </div>
-                    </div>
-                <button class="carousel-button prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-button next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section about">
-        <div class="container">
-            <h2>The Story of <span class="accent">COLLINS WEB.</span></h2>
-            <p><strong>This isn't about being 'inspired' for a day. It's about changing the story you tell yourself every time you face a challenge.</strong> My journey began not in a conference room, but in a moment of critical paralysis. I had all the knowledge, all the resources, but couldn't make the *first move*. That's when I developed the simple, actionable systems I now teach—systems that cut the psychological fluff and force forward motion. Kindra Hall taught me the power of narrative; Mel Robbins showed me the necessity of a hard push. Collins Web is where those two forces collide. I don't give you permission; **I give you the absolute requirement to start.**</p>
-            <a href="#testimonials" class="btn btn-secondary">SEE THE IMPACT</a>
-        </div>
-    </section>
-
-    <section id="newsletter" class="section newsletter">
-        <div class="container">
-            <h2>JOIN THE INNER CIRCLE.</h2>
-            <p class="subtitle">The weekly digest of breakthroughs, strategies, and the occasional hard truth you need.</p>
-            <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST" class="newsletter-form">
-                <input type="email" name="email" placeholder="Your best email address (no excuses)" required>
-                <button type="submit" class="btn btn-primary">GET THE BREAKTHROUGH</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="contact-banner" class="cta-banner">
-        <div class="container">
-            <h2>READY TO STOP TALKING AND <span class="accent">START WINNING?</span></h2>
-            <p>Your next level is just a conversation away. Skip the complex form and go direct.</p>
-            <a href="mailto:collins@web.com?subject=Inquiry%20from%20Landing%20Page" class="btn btn-cta">EMAIL COLLINS WEB DIRECTLY</a>
-        </div>
-    </section>
-<footer style="background-color:#111; color:#fff; padding:60px 20px; font-family:Arial, sans-serif;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto;">
-    
-    <!-- Column 1: About -->
-    <div style="flex:1; min-width:200px; margin:10px;">
-      <h3 style="color:#FFCC00; margin-bottom:15px;">About</h3>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Our Story</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Mission</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Team</p>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link fs-6" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fs-6" href="aboutus.html">About</a></li>
+          <li class="nav-item"><a class="nav-link fs-6" href="#speaking">Speaking</a></li>
+          <li class="nav-item"><a class="nav-link fs-6" href="#resources">Resources</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent" href="#connect">Book Collins to Speak</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    
-    <!-- Column 2: Services -->
-    <div style="flex:1; min-width:200px; margin:10px;">
-      <h3 style="color:#FFCC00; margin-bottom:15px;">Services</h3>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Keynote Speaking</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Coaching</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Online Courses</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Community Building</p>
-    </div>
-    
-    <!-- Column 3: Resources -->
-    <div style="flex:1; min-width:200px; margin:10px;">
-      <h3 style="color:#FFCC00; margin-bottom:15px;">Resources</h3>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Videos</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Podcasts</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Blog</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Success Stories</p>
-    </div>
-    
-    <!-- Column 4: Connect -->
-    <div style="flex:1; min-width:200px; margin:10px;">
-      <h3 style="color:#FFCC00; margin-bottom:15px;">Connect</h3>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Contact</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Newsletter Signup</p>
-      <p style="font-size:14px; color:#aaa; margin:5px 0;">Social Media</p>
-    </div>
-  </div>
+  </nav>
 
-  <!-- Bottom Footer -->
-  <div style="text-align:center; margin-top:30px; border-top:1px solid #333; padding-top:20px;">
-    <p style="font-size:13px; color:#aaa; margin:0;">
-      © 2025 Collins Web. All rights reserved.
-    </p>
-  </div>
-</footer>
+  <!-- HERO -->
+  <header id="home" class="hero reveal" style="background-image:url('https://i.imgur.com/KxT5g0G.jpg');">
+    <div class="container hero-inner">
+      <div class="row align-items-center">
+        <div class="col-lg-7 pe-lg-5 text-start">
+          <!-- hero lines use reveal with small inline delays -->
+          <p class="text-uppercase fw-semibold mb-2 reveal" style="color:var(--gold);letter-spacing:0.06em; transition-delay:90ms;">A Voice That Awakens What’s Inside You</p>
+          <h1 class="display-5 fw-bold mb-3 reveal" style="line-height:1.05; transition-delay:220ms;">Unlock Your Potential. Transform Your Mind. Rise With Excellence.</h1>
+          <p class="lead mb-4 reveal" style="transition-delay:360ms;">Collins K. Masinde is the voice calling a generation to think differently, live intentionally, and rise into the fullness of their God-given potential.</p>
+          <div class="d-flex gap-2 flex-column flex-sm-row reveal" style="transition-delay:480ms;">
+            <a class="btn btn-accent btn-lg hover-lift" href="#connect">Book Collins to Speak</a>
+            <a class="btn btn-accent-outline btn-lg hover-lift" href="#speaking">Explore His Message →</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 d-none d-lg-block">
+          <!-- optional portrait or event photo here -->
+          <div class="tilt-wrap" data-tilt>
+            <img src="https://i.imgur.com/placeholder.png" alt="Collins K. Masinde" class="img-fluid rounded shadow-lg tilt" style="max-height:380px; object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5" style="background:var(--muted);">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5 text-center">
+          <img src="placeholder-headshot-portrait.jpg" alt="Collins K. Masinde portrait" class="img-fluid rounded shadow reveal" style="max-width:380px; transition-delay:120ms;">
+        </div>
+        <div class="col-lg-7">
+          <h2 class="section-title reveal" style="transition-delay:180ms;">Transformation Over Motivation</h2>
+          <p class="mt-3 lead text-dark reveal" style="transition-delay:260ms;">Across Africa and beyond, millions of young adults feel stuck — full of dreams but low on direction, potential but lacking <strong>mindset</strong> and <strong>discipline</strong>. Collins speaks into this gap with a voice that is calm, deep, and transformational.</p>
+
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2 reveal-stagger" style="--delay:80ms;"> <strong>Break limiting beliefs</strong> that sabotage progress.</li>
+            <li class="mb-2 reveal-stagger" style="--delay:160ms;"> <strong>Build discipline</strong> that produces excellence.</li>
+            <li class="mb-2 reveal-stagger" style="--delay:240ms;"> <strong>Renew their mind</strong> through faith-rooted principles.</li>
+            <li class="mb-2 reveal-stagger" style="--delay:320ms;"> Step into <strong>identity, purpose, and impact</strong>.</li>
+          </ul>
+
+          <a href="#speaking" class="btn btn-dark mt-3 reveal" style="transition-delay:420ms;">Invite Collins to Speak →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO HE SPEAKS TO -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title reveal" style="transition-delay:120ms;">Who He Speaks To</h2>
+      <p class="text-center text-muted mb-4 reveal" style="transition-delay:200ms;">Collins connects with diverse audiences — from youth to corporate teams — delivering practical insights that resonate and inspire transformation.</p>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 row-stagger reveal" style="transition-delay:300ms;">
+        <!-- each card uses reveal-stagger so children reveal with small stagger -->
+        <div class="col">
+          <div class="card h-100 topic-card hover-lift tilt-wrap" data-tilt>
+            <div class="card-body text-center reveal-stagger" style="--delay:80ms;">
+              <i class="fa-solid fa-users d-block mb-2 icon-rotate"></i>
+              <h5 class="card-title">Youth &amp; Young Adults</h5>
+              <p class="card-text small text-muted">Direction, identity and practical tools for growth.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 topic-card hover-lift tilt-wrap" data-tilt>
+            <div class="card-body text-center reveal-stagger" style="--delay:160ms;">
+              <i class="fa-solid fa-church d-block mb-2 icon-rotate"></i>
+              <h5 class="card-title">Churches &amp; Faith Communities</h5>
+              <p class="card-text small text-muted">Biblical, transformational teaching for congregations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 topic-card hover-lift tilt-wrap" data-tilt>
+            <div class="card-body text-center reveal-stagger" style="--delay:240ms;">
+              <i class="fa-solid fa-school d-block mb-2 icon-rotate"></i>
+              <h5 class="card-title">Schools, Colleges &amp; Universities</h5>
+              <p class="card-text small text-muted">Mindset and identity sessions for students and staff.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 topic-card hover-lift tilt-wrap" data-tilt>
+            <div class="card-body text-center reveal-stagger" style="--delay:320ms;">
+              <i class="fa-solid fa-user-tie d-block mb-2 icon-rotate"></i>
+              <h5 class="card-title">Leadership Teams</h5>
+              <p class="card-text small text-muted">Culture, discipline and excellence for leaders.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 topic-card hover-lift tilt-wrap" data-tilt>
+            <div class="card-body text-center reveal-stagger" style="--delay:400ms;">
+              <i class="fa-solid fa-building d-block mb-2 icon-rotate"></i>
+              <h5 class="card-title">Corporate Teams</h5>
+              <p class="card-text small text-muted">Practical leadership & performance frameworks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 topic-card hover-lift tilt-wrap" data-tilt>
+            <div class="card-body text-center reveal-stagger" style="--delay:480ms;">
+              <i class="fa-solid fa-hands-holding-child d-block mb-2 icon-rotate"></i>
+              <h5 class="card-title">Social Impact Organizations</h5>
+              <p class="card-text small text-muted">Programs that move communities toward excellence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE / PROMO -->
+  <section class="quote-hero py-5 reveal" style="background-image:url('https://i.imgur.com/8Qp2D6y.jpg');">
+    <div class="container position-relative text-center py-5" style="z-index:2;">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <h2 class="display-6 fw-bolder mb-3 reveal" style="transition-delay:160ms;color:#fff">“Excellence is not what you do — it is who you become.”</h2>
+          <p class="lead text-white-50 mb-4 reveal" style="transition-delay:260ms;">Collins teaches that transformation begins in the mind, is proven by discipline, and is lived through consistent excellence.</p>
+          <a href="#speaking" class="btn btn-accent btn-lg hover-lift reveal" style="transition-delay:340ms;">View Speaking Topics</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED TOPICS -->
+  <section id="speaking" class="py-5">
+    <div class="container">
+      <h2 class="section-title reveal" style="transition-delay:120ms;">Featured Topics</h2>
+      <p class="text-center text-muted mb-4 reveal" style="transition-delay:200ms;">Practical, transformational and faith-based topics that help you unlock potential and live with purpose.</p>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card topic-card h-100 hover-lift reveal-stagger" style="--delay:80ms;">
+            <div class="card-body">
+              <i class="fa-solid fa-brain mb-2 icon-rotate"></i>
+              <h5 class="card-title">The Mindset Shift That Changes Everything</h5>
+              <p class="card-text small text-muted">How to reframe thinking to produce different outcomes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card topic-card h-100 hover-lift reveal-stagger" style="--delay:160ms;">
+            <div class="card-body">
+              <i class="fa-solid fa-unlock mb-2 icon-rotate"></i>
+              <h5 class="card-title">Breaking Barriers: Unlock the Potential Inside You</h5>
+              <p class="card-text small text-muted">Steps to overcome internal limitations and fear.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card topic-card h-100 hover-lift reveal-stagger" style="--delay:240ms;">
+            <div class="card-body">
+              <i class="fa-solid fa-star mb-2 icon-rotate"></i>
+              <h5 class="card-title">Excellence in All Things</h5>
+              <p class="card-text small text-muted">Discipline routines that produce outcomes and character.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card topic-card h-100 hover-lift reveal-stagger" style="--delay:320ms;">
+            <div class="card-body">
+              <i class="fa-solid fa-sync-alt mb-2 icon-rotate"></i>
+              <h5 class="card-title">Renewed: Transform Your Mind & Identity</h5>
+              <p class="card-text small text-muted">Practical identity restoration for consistent progress.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card topic-card h-100 hover-lift reveal-stagger" style="--delay:400ms;">
+            <div class="card-body">
+              <i class="fa-solid fa-hand-holding-heart mb-2 icon-rotate"></i>
+              <h5 class="card-title">Faith in Daily Life</h5>
+              <p class="card-text small text-muted">Applying biblical truths to modern challenges and work.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card topic-card h-100 hover-lift reveal-stagger" style="--delay:480ms;">
+            <div class="card-body">
+              <i class="fa-solid fa-lightbulb mb-2 icon-rotate"></i>
+              <h5 class="card-title">Practical Tools for Growth</h5>
+              <p class="card-text small text-muted">From mindset to action — step-by-step frameworks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section id="resources" class="py-5" style="background:var(--deep-blue); color:white;">
+    <div class="container text-center">
+      <h2 class="section-title text-white reveal" style="transition-delay:120ms;">Ready to Stop Talking and Start Winning?</h2>
+      <p class="lead text-white-50 mb-4 reveal" style="transition-delay:200ms;">Your next level is just a conversation away. Skip the complex form and go direct.</p>
+      <a href="mailto:collins@example.com?subject=Speaking%20Inquiry%20from%20Website" class="btn btn-light btn-lg fw-bold reveal" style="transition-delay:300ms;">Email Collins Directly</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">About</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#about" class="text-white underline-grow">Our Story</a></li>
+            <li><a href="#mission" class="text-white underline-grow">Mission</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#speaking" class="text-white underline-grow">Keynote Speaking</a></li>
+            <li><a href="#connect" class="text-white underline-grow">Coaching</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#resources" class="text-white underline-grow">Videos</a></li>
+            <li><a href="#resources" class="text-white underline-grow">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Connect</h6>
+          <ul class="list-unstyled small">
+            <li><a href="mailto:collins@example.com" class="text-white underline-grow">Email</a></li>
+            <li><a href="#social" class="text-white underline-grow">Social</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center small text-secondary mb-0">&copy; 2025 Collins K. Masinde. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  /**********************************************
+   * Scroll & Hover Effects
+   * - reveal (IntersectionObserver)
+   * - staggered reveals for grid rows
+   * - hover lift + icon micro-motion (CSS)
+   * - tilt effect on non-touch / large screens
+   * - parallax hero (subtle)
+   * - active nav link on scroll
+   **********************************************/
+
+  (function(){
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    /* ---------- Intersection Observer: reveal ---------- */
+    const revealObserver = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          // if using reveal-stagger children, add revealed to them later via row observer
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    // observe elements with .reveal
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ---------- Staggered reveal for rows ---------- */
+    document.querySelectorAll('.row-stagger').forEach(row => {
+      const items = row.querySelectorAll('.reveal-stagger, .card.reveal-stagger, .topic-card.reveal-stagger');
+      if(items.length === 0) return;
+      // apply incremental delays based on position
+      items.forEach((it, i) => it.style.setProperty('--delay', `${i * 90}ms`));
+      // observe the row and reveal children once visible
+      const rowObs = new IntersectionObserver((entries, rObs) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            items.forEach(it => it.classList.add('revealed'));
+            rObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      rowObs.observe(row);
+    });
+
+    // Also observe any standalone .reveal-stagger elements (not in row-stagger)
+    document.querySelectorAll('.reveal-stagger').forEach(el => {
+      if(!el.closest('.row-stagger')) revealObserver.observe(el);
+    });
+
+    /* ---------- Hover tilt (desktop only) ---------- */
+    if(canHover){
+      document.querySelectorAll('[data-tilt]').forEach(wrap => {
+        const el = wrap.querySelector('.tilt') || wrap;
+        // guard for null
+        if(!el) return;
+        // update bounds on move (re-calc)
+        let bounds = wrap.getBoundingClientRect();
+        const updateBounds = () => bounds = wrap.getBoundingClientRect();
+        window.addEventListener('resize', updateBounds);
+        wrap.addEventListener('mousemove', (e) => {
+          const x = (e.clientX - bounds.left) / bounds.width - 0.5; // -0.5..0.5
+          const y = (e.clientY - bounds.top) / bounds.height - 0.5;
+          const rx = (y * 8).toFixed(2), ry = (x * -8).toFixed(2);
+          el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`;
+        });
+        wrap.addEventListener('mouseleave', ()=> el.style.transform = 'rotateX(0deg) rotateY(0deg) translateZ(0)');
+      });
+    }
+
+    /* ---------- Parallax hero (subtle) ---------- */
+    const hero = document.querySelector('.hero');
+    if(hero){
+      // only enable parallax on non-touch large screens
+      const enableParallax = canHover && window.innerWidth > 768;
+      if(enableParallax){
+        window.addEventListener('scroll', () => {
+          const rect = hero.getBoundingClientRect();
+          const scrolled = Math.max(0, -rect.top);
+          // small multiplier for subtlety
+          hero.style.backgroundPosition = `center ${30 + scrolled * 0.06}%`;
+        }, { passive: true });
+      }
+    }
+
+    /* ---------- Active nav link on scroll ---------- */
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
+    if(sections.length && navLinks.length){
+      const navObserver = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const id = entry.target.id;
+            navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+          }
+        });
+      }, { threshold: 0.55 });
+      sections.forEach(s => navObserver.observe(s));
+    }
+
+    /* ---------- Simple stagger for any .reveal with inline transition-delay already set ---------- */
+    // If an element has inline transition-delay style, revealObserver will pick it up and animate when revealed.
+
+    /* ---------- Accessibility / performance notes ---------- */
+    // Avoid heavy effects on touch devices
+    if(!canHover){
+      // remove tilt elements transforms if present
+      document.querySelectorAll('.tilt').forEach(el => el.style.transform = '');
+    }
+
+    /* ---------- Form submit demo (kept from your file) ---------- */
+    const form = document.getElementById('bookingForm');
+    const alertBox = document.getElementById('formAlert');
+    if(form){
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+        alertBox.classList.remove('d-none', 'alert-danger');
+        alertBox.classList.add('alert-success');
+        alertBox.innerText = 'Thanks — your inquiry has been received. Collins will respond personally within 48 hours.';
+        form.reset();
+        form.classList.remove('was-validated');
+      }, false);
+    }
+
+  })();
+  </script>
+
 </body>
 </html>
