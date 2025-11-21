@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Collins K. Masinde</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --deep-blue:#0d283c;
+      --gold:#f9b234;
+      --accent:#CFA36A;
+      --muted:#F4F6F8;
+    }
+    body { font-family: 'Poppins', sans-serif; line-height:1.6; scroll-behavior:smooth; color:#0b2340; background:#fff; }
+    .container-narrow { max-width:1100px; margin:0 auto; }
+
+    h1.page-title { font-size:2.2rem; color:var(--deep-blue); font-weight:700; margin-bottom:0.25rem; }
+    h2.section-title { font-size:2rem; color:var(--deep-blue); margin-bottom:0.75rem; }
+    h2.section-title::after { content:""; width:64px; height:4px; background:var(--gold); display:block; margin:10px 0 0 0; border-radius:2px; }
+
+    .btn-accent { background:var(--gold); color:var(--deep-blue); font-weight:700; border:0; }
+    .btn-accent-outline { border:2px solid var(--gold); color:var(--gold); background:transparent; font-weight:700; }
+
+    .hero-blog {
+      position:relative;
+      min-height:30vh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background-size:cover;
+      background-position:center;
+      background-image: linear-gradient(180deg, rgba(13,40,60,0.86), rgba(13,40,60,0.54)), url('https://i.imgur.com/8Qp2D6y.jpg');
+    }
+    .hero-inner{ position:relative; z-index:2; padding:36px 0; }
+
+    .card-article { border-radius:10px; overflow:hidden; transition: transform .28s ease, box-shadow .28s ease; }
+    .card-article:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11,35,64,0.08); }
+
+    .post-thumb { width:100%; height:180px; object-fit:cover; display:block; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .72s ease, transform .72s ease; }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    .reveal-stagger { opacity:0; transform:translateY(18px); transition:opacity .62s ease, transform .62s ease; transition-delay: var(--delay, 0ms); }
+    .reveal-stagger.revealed { opacity:1; transform:translateY(0); }
+
+    .sidebar-card { border-radius:10px; padding:16px; background:#fff; box-shadow:0 8px 28px rgba(11,35,64,0.05); }
+
+    footer { background:#000; color:#fff; padding:40px 0; }
+
+    /* Hover dropdown (navbar) */
+    @media (min-width: 992px) {
+      .hover-dropdown:hover .dropdown-menu { display:block; margin-top:0; }
+    }
+
+    @media (max-width:767.98px){
+      h1.page-title { font-size:1.6rem; }
+      h2.section-title { font-size:1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: var(--deep-blue);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">COLLINS K. MASINDE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link fs-6" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link fs-6" href="aboutus.html">About</a></li>
+          <li class="nav-item"><a class="nav-link fs-6" href="speaking.html">Speaking</a></li>
+
+          <li class="nav-item dropdown hover-dropdown">
+            <a class="nav-link dropdown-toggle fs-6" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+            <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
+              <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+              <li><a class="dropdown-item" href="media.html">Media</a></li>
+              <li><a class="dropdown-item" href="connect.html">Connect</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent" href="connect.html">Book Collins to Speak</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-blog reveal">
+    <div class="container hero-inner">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <p class="pill" style="color:var(--gold); background:rgba(249,178,52,0.08);">Resources — Blog</p>
+          <h1 class="page-title mt-3">Grow Daily. Think Deeply. Rise Intentionally.</h1>
+          <p class="lead mt-3" style="max-width:760px; color:rgba(255,255,255,0.92);">
+            Articles and reflections on mindset, discipline, faith, leadership and personal growth — practical, scripture-grounded, and action-oriented.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container container-narrow">
+      <div class="row g-4">
+
+        <!-- MAIN: POSTS -->
+        <div class="col-lg-8">
+          <div class="row g-4">
+
+            <!-- Featured post -->
+            <div class="col-12 reveal-stagger" style="--delay:80ms;">
+              <article class="card-article card">
+                <div class="row g-0">
+                  <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1200&auto=format&fit=crop" alt="featured" class="post-thumb">
+                  </div>
+                  <div class="col-md-7 p-4">
+                    <h3 class="mb-2"><a href="#" class="text-decoration-none" style="color:var(--deep-blue)">Renew Your Mind: A Practical 7-Day Reset</a></h3>
+                    <p class="small text-muted mb-2">Mindset &amp; Identity — October 15, 2025</p>
+                    <p class="mb-0">A short, actionable guide to interrupting negative thought loops and replacing them with truths that produce confidence and purpose.</p>
+                    <div class="mt-3">
+                      <a href="#" class="btn btn-accent btn-sm">Read article</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Post list -->
+            <div class="col-12">
+              <div class="row g-3">
+                <div class="col-md-6 reveal-stagger" style="--delay:140ms;">
+                  <div class="card-article card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop" alt="" class="post-thumb">
+                    <div class="p-3">
+                      <h5 class="mb-1"><a href="#" class="text-decoration-none" style="color:var(--deep-blue)">Habits that Make Excellence Inevitable</a></h5>
+                      <p class="small text-muted mb-2">Discipline &amp; Excellence</p>
+                      <p class="small mb-0 text-muted">Practical routines that compound into a life of consistent results.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 reveal-stagger" style="--delay:200ms;">
+                  <div class="card-article card">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop" alt="" class="post-thumb">
+                    <div class="p-3">
+                      <h5 class="mb-1"><a href="#" class="text-decoration-none" style="color:var(--deep-blue)">Faith at Work: Everyday Holiness</a></h5>
+                      <p class="small text-muted mb-2">Faith &amp; Purpose</p>
+                      <p class="small mb-0 text-muted">How small choices reveal identity and shape destiny.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 reveal-stagger" style="--delay:260ms;">
+                  <div class="card-article card">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="" class="post-thumb">
+                    <div class="p-3">
+                      <h5 class="mb-1"><a href="#" class="text-decoration-none" style="color:var(--deep-blue)">Leading With Dignity</a></h5>
+                      <p class="small text-muted mb-2">Leadership &amp; Influence</p>
+                      <p class="small mb-0 text-muted">Practical leadership for those who serve and influence responsibly.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 reveal-stagger" style="--delay:320ms;">
+                  <div class="card-article card">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200&auto=format&fit=crop" alt="" class="post-thumb">
+                    <div class="p-3">
+                      <h5 class="mb-1"><a href="#" class="text-decoration-none" style="color:var(--deep-blue)">From Failure to Formation</a></h5>
+                      <p class="small text-muted mb-2">Personal Stories &amp; Life Lessons</p>
+                      <p class="small mb-0 text-muted">Lessons from a season of disappointments that became a training ground for character.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Pagination (static) -->
+            <div class="col-12 mt-4 text-center reveal-stagger" style="--delay:380ms;">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="col-lg-4">
+          <div class="mb-4 sidebar-card reveal-stagger" style="--delay:100ms;">
+            <h6 class="fw-bold">Search & Subscribe</h6>
+            <form class="mt-3">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search articles..." aria-label="Search">
+                <button class="btn btn-outline-secondary" type="button"><i class="fa fa-search"></i></button>
+              </div>
+              <div class="mb-2">
+                <input type="email" class="form-control" placeholder="Email for updates" />
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-accent">Subscribe</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="mb-4 sidebar-card reveal-stagger" style="--delay:160ms;">
+            <h6 class="fw-bold">Categories</h6>
+            <ul class="list-unstyled mt-3 mb-0 small">
+              <li class="mb-2"><a href="#" class="text-decoration-none">Mindset &amp; Identity</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none">Discipline &amp; Excellence</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none">Faith &amp; Purpose</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none">Leadership &amp; Influence</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none">Personal Stories</a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card reveal-stagger" style="--delay:220ms;">
+            <h6 class="fw-bold">Featured Download</h6>
+            <p class="small text-muted mb-2">7 Principles of Excellence — short guide.</p>
+            <a class="btn btn-accent-outline btn-sm" href="#" aria-disabled="true">Coming soon</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">About</h6>
+          <ul class="list-unstyled small">
+            <li><a href="aboutus.html" class="text-decoration-none" style="color:inherit">About Collins</a></li>
+            <li><a href="#mission" class="text-decoration-none" style="color:inherit">Mission</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="speaking.html" class="text-decoration-none" style="color:inherit">Keynote Speaking</a></li>
+            <li><a href="connect.html" class="text-decoration-none" style="color:inherit">Booking</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a href="media.html" class="text-decoration-none" style="color:inherit">Videos</a></li>
+            <li><a href="blog.html" class="text-decoration-none" style="color:inherit">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h6 class="text-uppercase fw-bold" style="color:var(--gold)">Connect</h6>
+          <ul class="list-unstyled small">
+            <li><a href="mailto:collins@example.com" class="text-decoration-none" style="color:inherit">Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center small text-secondary mb-0">&copy; 2025 Collins K. Masinde. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Reveal script -->
+  <script>
+  (function(){
+    const revealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal-stagger').forEach(el => {
+      if(!el.closest('.row-stagger')) revealObserver.observe(el);
+    });
+  })();
+  </script>
+</body>
+</html>

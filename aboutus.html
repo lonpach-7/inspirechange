@@ -26,7 +26,9 @@
     h1.page-title { font-size:2.2rem; color:var(--deep-blue); font-weight:700; text-align:left; margin-bottom:0.25rem; }
     h2.section-title { font-size:2rem; color:var(--deep-blue); text-align:left; margin-bottom:0.75rem; }
     h2.section-title::after { content:""; width:64px; height:4px; background:var(--gold); display:block; margin:10px 0 0 0; border-radius:2px; }
-
+ /* Accent buttons */
+    .btn-accent { background:var(--gold); color:var(--deep-blue); font-weight:700; border:0; }
+    .btn-accent-outline { border:2px solid var(--gold); color:var(--gold); background:transparent; font-weight:700; }
     /* Hero */
     .hero-about {
       position:relative;
@@ -80,24 +82,86 @@
 </head>
 <body>
 
-  <!-- NAVBAR (same look as site header) -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:var(--deep-blue);">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">COLLINS K. MASINDE</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse2">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navCollapse2">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="aboutus.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#speaking">Speaking</a></li>
-          <li class="nav-item"><a class="nav-link" href="/#resources">Resources</a></li>
-          <li class="nav-item ms-lg-3"><a class="btn btn-warning fw-bold" href="/#connect" style="background:var(--gold); color:var(--deep-blue);">Book Collins to Speak</a></li>
-        </ul>
-      </div>
+  <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background: var(--deep-blue);">
+  <div class="container">
+
+    <!-- BRAND -->
+    <a class="navbar-brand fw-bold" href="#">COLLINS K. MASINDE</a>
+
+    <!-- MOBILE TOGGLER -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navCollapse" 
+      aria-controls="navCollapse" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- HOME -->
+        <li class="nav-item">
+          <a class="nav-link fs-6" href="index.html">Home</a>
+        </li>
+
+        <!-- ABOUT -->
+        <li class="nav-item">
+          <a class="nav-link fs-6" href="aboutus.html">About</a>
+        </li>
+
+        <!-- SPEAKING -->
+        <li class="nav-item">
+          <a class="nav-link fs-6" href="speaking.html">Speaking</a>
+        </li>
+
+        <!-- RESOURCES (Hover Dropdown) -->
+        <li class="nav-item dropdown hover-dropdown">
+          <a 
+            class="nav-link dropdown-toggle fs-6" 
+            href="#" 
+            id="resourcesDropdown" 
+            role="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+            Resources
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="resourcesDropdown">
+            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item" href="media.html">Media</a></li>
+            <li><a class="dropdown-item" href="connect.html">connect</a></li>
+          </ul>
+        </li>
+
+        <!-- CTA BUTTON -->
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-accent" href="#connect">Book Collins to Speak</a>
+        </li>
+
+      </ul>
     </div>
-  </nav>
+
+  </div>
+</nav>
+
+
+<!-- HOVER DROPDOWN CSS -->
+<style>
+  /* Enable hover dropdown only on desktops */
+  @media (min-width: 992px) {
+    .hover-dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+  }
+</style>
+
 
   <!-- HERO -->
   <header class="hero-about reveal" style="background-image:url('https://i.imgur.com/8Qp2D6y.jpg');">
